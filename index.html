@@ -13,7 +13,7 @@ const Navbar = () => (
     <div className="hidden md:flex items-center gap-8 font-medium">
       <a href="#how-it-works" className="hover:text-yellow-200 transition">How it Works</a>
       <a href="#create" className="hover:text-yellow-200 transition">Create Video</a>
-      {/* Subtle Navbar addition */}
+      {/* Veteran Badge */}
       <div className="flex items-center gap-2 bg-blue-900/30 px-3 py-1 rounded-full text-sm border border-blue-400/30">
           <Flag size={14} className="text-blue-200" /> 
           <span className="text-blue-100 font-semibold">Veteran Owned</span>
@@ -25,7 +25,7 @@ const Navbar = () => (
   </nav>
 );
 
-// 2. Hero Section (Updated with Veteran Badges)
+// 2. Hero Section (Updated Copy)
 const Hero = ({ onStart }) => (
   <header className="relative w-full bg-red-600 text-white overflow-hidden">
     {/* Decorative Background Circles */}
@@ -42,7 +42,7 @@ const Hero = ({ onStart }) => (
             <Sparkles size={16} /> Official North Pole Partner
             </div>
             
-            {/* NEW: Service Disabled Veteran Owned Business Badge - UPDATED TEXT */}
+            {/* Service Disabled Veteran Owned Business Badge */}
             <div className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-900 to-blue-800 px-5 py-2 rounded-full text-white text-sm font-bold border-2 border-yellow-400/50 shadow-lg relative overflow-hidden group">
                 <div className="absolute inset-0 bg-white/10 skew-x-12 -translate-x-full group-hover:translate-x-full transition duration-700"></div>
                 <ShieldCheck size={18} className="text-yellow-300 flex-shrink-0" /> 
@@ -56,7 +56,7 @@ const Hero = ({ onStart }) => (
           Personalized Videos from <span className="text-yellow-300">Santa Claus</span>
         </h1>
         <p className="text-xl md:text-2xl text-red-100 mb-8 font-light max-w-lg mx-auto md:mx-0 leading-relaxed">
-          Create a magical, custom message for your child in seconds using advanced AI. Real magic, delivered instantly.
+          Create a magical, custom message for your child in seconds using the same <strong>Advanced Elf Technology</strong> that powers the sleigh.
         </p>
         <button 
           onClick={onStart}
@@ -93,7 +93,8 @@ const Hero = ({ onStart }) => (
           <div className="absolute bottom-4 left-4 z-20 text-white">
              <div className="flex items-center gap-2 bg-black/50 px-3 py-1 rounded-full backdrop-blur-sm">
                 <div className="w-2 h-2 bg-red-500 rounded-full animate-pulse"></div>
-                <span className="text-xs font-bold tracking-widest uppercase">AI Live Preview</span>
+                {/* Changed from "AI Preview" to "Elf-Cam" */}
+                <span className="text-xs font-bold tracking-widest uppercase">Elf-Cam Live Feed</span>
              </div>
           </div>
         </div>
@@ -102,7 +103,7 @@ const Hero = ({ onStart }) => (
   </header>
 );
 
-// 3. Features / Trust Section
+// 3. Features / Trust Section (Updated Copy)
 const Features = () => (
   <section id="how-it-works" className="py-20 bg-white relative overflow-hidden">
     <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent"></div>
@@ -116,8 +117,8 @@ const Features = () => (
       <div className="grid md:grid-cols-3 gap-12">
         {[
           { icon: <MessageSquare size={32} />, title: "1. Enter Details", desc: "Tell us your child's name, their wish, and a special message for Santa to say." },
-          { icon: <Sparkles size={32} />, title: "2. AI Magic", desc: "Our advanced North Pole AI generates a realistic video of Santa speaking instantly." },
-          { icon: <Gift size={32} />, title: "3. Deliver Joy", desc: "Download the high-quality video to share with family or play on Christmas Eve." }
+          { icon: <Sparkles size={32} />, title: "2. North Pole Magic", desc: "Our Head Elves use the same technology that guides the Reindeer to create your video instantly." },
+          { icon: <Gift size={32} />, title: "3. Deliver Joy", desc: "Download the studio-quality video to share with family or play on Christmas Eve." }
         ].map((item, idx) => (
           <div key={idx} className="flex flex-col items-center text-center group">
             <div className="w-20 h-20 bg-red-50 text-red-600 rounded-2xl rotate-3 flex items-center justify-center mb-6 shadow-sm group-hover:rotate-6 group-hover:bg-red-100 group-hover:scale-110 transition duration-300 border-2 border-red-100">
@@ -153,28 +154,12 @@ const Generator = () => {
     e.preventDefault();
     setStep(2); // Show loading screen
 
-    // ---------------------------------------------------------
-    // REAL API INTEGRATION NOTES (HeyGen Example):
-    // ---------------------------------------------------------
-    // 1. You would make a POST request to https://api.heygen.com/v2/video/generate
-    // 2. Headers: { "X-Api-Key": "YOUR_KEY", "Content-Type": "application/json" }
-    // 3. Body: {
-    //      "video_inputs": [{
-    //        "character": { "type": "avatar", "avatar_id": "SANTA_AVATAR_ID" },
-    //        "voice": { "type": "audio", "voice_id": "SANTA_VOICE_ID" },
-    //        "script": { "text": `Ho ho ho! Hello ${formData.childName}. I see you want a ${formData.gift}...` }
-    //      }]
-    //    }
-    // 4. The API returns a job_id. You must then poll the status endpoint until status === "completed".
-    // ---------------------------------------------------------
-
     // MOCK SIMULATION (Remove this when adding real API)
     console.log("Sending data to Santa's Workshop:", formData);
     
     // Simulate a 4-second delay for "Generation"
     setTimeout(() => {
         // Mock success URL (In reality, this comes from the API response)
-        // Using a reliable public domain Christmas video for the preview
         setGeneratedVideoUrl("https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4"); 
         setStep(3);
     }, 4000);
@@ -196,7 +181,7 @@ const Generator = () => {
              <p className="text-red-100 text-lg mb-8 leading-relaxed">Santa needs just a few details to check his list twice and create your custom video.</p>
              
              <ul className="space-y-5 text-base font-medium">
-                <li className="flex items-center gap-4"><div className="bg-red-600 p-1 rounded-full"><CheckCircle size={18} className="text-yellow-300"/></div> Studio Quality AI Video</li>
+                <li className="flex items-center gap-4"><div className="bg-red-600 p-1 rounded-full"><CheckCircle size={18} className="text-yellow-300"/></div> Studio Quality 4K Video</li>
                 <li className="flex items-center gap-4"><div className="bg-red-600 p-1 rounded-full"><CheckCircle size={18} className="text-yellow-300"/></div> Authentic Santa Voice</li>
                 <li className="flex items-center gap-4"><div className="bg-red-600 p-1 rounded-full"><CheckCircle size={18} className="text-yellow-300"/></div> Delivered in Minutes</li>
              </ul>
@@ -293,7 +278,7 @@ const Generator = () => {
                 <CheckCircle size={24} className="text-green-500 flex-shrink-0" /> Reviewing Naughty/Nice List
             </div>
             <div className="flex items-center gap-4 text-lg text-gray-700 animate-pulse delay-300">
-                <CheckCircle size={24} className="text-green-500 flex-shrink-0" /> Polishing the Sleigh Bells
+                <CheckCircle size={24} className="text-green-500 flex-shrink-0" /> Calibrating Sleigh Systems
             </div>
             <div className="flex items-center gap-4 text-lg text-gray-700 animate-pulse delay-700">
                 <CheckCircle size={24} className="text-green-500 flex-shrink-0" /> Recording Santa's Voice
@@ -411,7 +396,7 @@ const App = () => {
         </div>
         <div className="container mx-auto px-6 mt-16 pt-8 border-t border-gray-800 text-center text-sm flex flex-col md:flex-row justify-between items-center text-gray-500">
             <p>&copy; 2024 SantaSendIt.com. All rights reserved.</p>
-            <p className="mt-4 md:mt-0">Made with holiday cheer (and AI) in the USA <Flag size={14} className="inline ml-1 text-red-700" fill="currentColor"/></p>
+            <p className="mt-4 md:mt-0">Made with holiday cheer (and lots of cookies) in the USA <Flag size={14} className="inline ml-1 text-red-700" fill="currentColor"/></p>
         </div>
       </footer>
     </div>
@@ -419,5 +404,3 @@ const App = () => {
 };
 
 export default App;
-
-
