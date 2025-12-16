@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SantaSendIt - Personalized Videos from Santa</title>
     
+    <!-- EMBEDDED FAVICON (Candy Cane) -->
+    <!-- This puts the icon directly in the file, no external image needed -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><path d='M70 30 A 20 20 0 0 0 30 30 V 90' stroke='white' stroke-width='24' fill='none' stroke-linecap='round' /><path d='M70 30 A 20 20 0 0 0 30 30 V 90' stroke='%23DC2626' stroke-width='24' fill='none' stroke-linecap='round' stroke-dasharray='16 16' /></svg>">
+
     <!-- SOCIAL MEDIA PREVIEW TAGS -->
     <meta property="og:title" content="Personalized Videos from Santa Claus - Veteran Owned">
     <meta property="og:description" content="Get a custom 4K video message from Santa for your child. Support a Service-Disabled Veteran Owned Small Business this Christmas.">
@@ -125,14 +129,14 @@
                         <div className="relative w-80 h-96 bg-red-800 rounded-2xl rotate-3 shadow-2xl border-4 border-yellow-400 overflow-hidden group hover:rotate-0 transition duration-500">
                             <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10 pointer-events-none"></div>
                             <div className="w-full h-full bg-gray-800 flex items-center justify-center text-white relative">
-                                <video className="absolute inset-0 w-full h-full object-cover z-20" controls playsInline preload="metadata" poster="https://images.unsplash.com/photo-1576919228236-a097c32a5cd4?q=80&w=1000&auto=format&fit=crop">
+                                <video className="absolute inset-0 w-full h-full object-cover object-right z-20" controls playsInline preload="metadata" poster="https://images.unsplash.com/photo-1576919228236-a097c32a5cd4?q=80&w=1000&auto=format&fit=crop">
                                     <source src="./preview.mp4" type="video/mp4" />
                                 </video>
                             </div>
                             <div className="absolute bottom-4 left-4 z-30 text-white pointer-events-none">
                                 <div className="flex items-center gap-2 bg-black/50 px-3 py-1 rounded-full backdrop-blur-sm">
                                     <div className="w-2 h-2 bg-red-500 rounded-full animate-pulse"></div>
-                                    <span className="text-xs font-bold tracking-widest uppercase">Tap to Preview Voice</span>
+                                    <span className="text-xs font-bold tracking-widest uppercase">Tap to Preview</span>
                                 </div>
                             </div>
                         </div>
