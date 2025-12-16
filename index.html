@@ -8,7 +8,6 @@
     <!-- SOCIAL MEDIA PREVIEW TAGS -->
     <meta property="og:title" content="Personalized Videos from Santa Claus - Veteran Owned">
     <meta property="og:description" content="Get a custom 4K video message from Santa for your child. Support a Service-Disabled Veteran Owned Small Business this Christmas.">
-    <!-- UPDATED IMAGE: Cozy Santa Workshop -->
     <meta property="og:image" content="https://images.unsplash.com/photo-1576919228236-a097c32a5cd4?q=80&w=1000&auto=format&fit=crop">
     <meta property="og:url" content="https://santasendit.com">
     <meta property="og:type" content="website">
@@ -123,21 +122,17 @@
                         </div>
                     </div>
                     <div className="md:w-1/2 flex justify-center relative">
-                        <div className="relative w-80 h-96 bg-red-800 rounded-2xl rotate-3 shadow-2xl border-4 border-yellow-400 overflow-hidden">
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10"></div>
-                            <div className="w-full h-full bg-gray-800 flex items-center justify-center text-white">
-                                <div className="text-center p-6 relative z-20">
-                                    <div className="w-24 h-24 bg-red-600 border-4 border-white rounded-full mx-auto mb-4 flex items-center justify-center shadow-lg">
-                                        <IconVideo size={40} />
-                                    </div>
-                                    <p className="font-serif italic text-xl text-yellow-200">"Hello, Timothy! I see you've been very good..."</p>
-                                </div>
-                                <img src="https://images.unsplash.com/photo-1543589923-78e35f728335?q=80&w=1000&auto=format&fit=crop" alt="Santa" className="absolute inset-0 w-full h-full object-cover opacity-50 grayscale mix-blend-overlay"/>
+                        <div className="relative w-80 h-96 bg-red-800 rounded-2xl rotate-3 shadow-2xl border-4 border-yellow-400 overflow-hidden group hover:rotate-0 transition duration-500">
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10 pointer-events-none"></div>
+                            <div className="w-full h-full bg-gray-800 flex items-center justify-center text-white relative">
+                                <video className="absolute inset-0 w-full h-full object-cover z-20" controls playsInline preload="metadata" poster="https://images.unsplash.com/photo-1576919228236-a097c32a5cd4?q=80&w=1000&auto=format&fit=crop">
+                                    <source src="./preview.mp4" type="video/mp4" />
+                                </video>
                             </div>
-                            <div className="absolute bottom-4 left-4 z-20 text-white">
+                            <div className="absolute bottom-4 left-4 z-30 text-white pointer-events-none">
                                 <div className="flex items-center gap-2 bg-black/50 px-3 py-1 rounded-full backdrop-blur-sm">
                                     <div className="w-2 h-2 bg-red-500 rounded-full animate-pulse"></div>
-                                    <span className="text-xs font-bold tracking-widest uppercase">Elf-Cam Live Feed</span>
+                                    <span className="text-xs font-bold tracking-widest uppercase">Tap to Preview Voice</span>
                                 </div>
                             </div>
                         </div>
@@ -196,7 +191,7 @@
                 const orderData = { ...formData, timestamp: new Date().toISOString() };
                 
                 // MAKE.COM WEBHOOK URL (Pre-Filled)
-                const webhookUrl = 'https://hook.us2.make.com/we5p455avsivr623dxfcc6svpgffat40'; 
+                const webhookUrl = 'https://hook.us2.make.com/4cnf7y0uwhiz1qg7rycv37bk7hlctphl'; 
 
                 try {
                     await fetch(webhookUrl, {
